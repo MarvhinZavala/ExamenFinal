@@ -1,0 +1,42 @@
+[
+  {
+    "_id": { "$oid": "6502d1f5e8a6d5b12c7f9a01" },
+    "nombre": "Juan",
+    "apellido": "Pérez",
+    "aprobado": true,
+    "nota": 7.5,
+    "fecha": { "$date": "2024-09-01T00:00:00Z" }
+  },
+  {
+    "_id": { "$oid": "6502d1f5e8a6d5b12c7f9a02" },
+    "nombre": "María",
+    "apellido": "López",
+    "aprobado": false,
+    "nota": 4.2,
+    "fecha": { "$date": "2024-09-02T00:00:00Z" }
+  },
+  {
+    "_id": { "$oid": "6502d1f5e8a6d5b12c7f9a03" },
+    "nombre": "Carlos",
+    "apellido": "García",
+    "aprobado": true,
+    "nota": 8.9,
+    "fecha": { "$date": "2024-09-03T00:00:00Z" }
+  },
+  {
+    "_id": { "$oid": "6502d1f5e8a6d5b12c7f9a04" },
+    "nombre": "Lucía",
+    "apellido": "Martínez",
+    "aprobado": true,
+    "nota": 9.1,
+    "fecha": { "$date": "2024-09-04T00:00:00Z" }
+  },
+  {
+    "_id": { "$oid": "6502d1f5e8a6d5b12c7f9a05" },
+    "nombre": "Sofía",
+    "apellido": "Fernández",
+    "aprobado": false,
+    "nota": 5.0,
+    "fecha": { "$date": "2024-09-05T00:00:00Z" }
+  }
+]
