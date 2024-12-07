@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Create{% endblock %}
+
+{% block content %}
+<h1>Crear un nuevo alumno</h1>
+<form method="post">
+
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre"
+            placeholder="Ingrese el nombre" class="form-control"
+            value="{{ request.form.get('nombre', '') }}">
+    </div>
+
+    <div class="form-group">
+        <label for="apellido">Apellido</label>
+        <textarea id="apellido" name="apellido"
+                placeholder="Ingrese el apellido" class="form-control">{{ request.form.get('apellido', '') }}</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="aprobado">Aprobado</label>
+        <textarea id="aprobado" name="aprobado"
+                placeholder="Ingrese 1 si es aprobado o 0 si es desaprobado" class="form-control">{{ request.form.get('aprobado', '') }}</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="nota">Nota</label>
+        <textarea id="nota" name="nota"
+                placeholder="Ingrese un número entre 0 y 20" class="form-control">{{ request.form.get('nota', '') }}</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="fecha">Fecha</label>
+        <input type="date" id="fecha" name="fecha" class="form-control" value="{{ request.form.get('fecha', '') }}">
+        
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+{% endblock %}

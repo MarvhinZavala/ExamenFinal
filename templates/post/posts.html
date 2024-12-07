@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Posts{% endblock %}
+
+{% block content %}
+<h1>Bienvenido a la lista de alumnos</h1>
+<p>Lista de alumnos:</p>
+{% if posts %}
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Aprobado</th>
+                <th>Nota</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for post in posts %}
+                <tr>
+                    <td><a href="{{ url_for('get_one_post', post_id=post['id']) }}">{{ post['id'] }}</a></td>
+                    <td>{{ post['nombre'] }}</td>
+                    <td>{{ post['apellido'] }}</td>
+                    <td>{{ post['aprobado'] }}</td>
+                    <td>{{ post['nota'] }}</td>
+                    <td>{{ post['fecha'] }}</td>
+                    <td>
+                        <a href="{{ url_for('edit_one_post', post_id=post['id']) }}" class="btn btn-warning btn-sm">Editar</a>
+                        <form action="{{ url_for('delete_one_post', post_id=post['id']) }}" method="post" style="display:inline;">
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar este post?');">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No hay nada en la tabla.</p>
+{% endif %}
+<a class="btn btn-primary" href="{{ url_for('create_one_post') }}">Nuevo Post</a>
+{% endblock %}
